@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Games{% endblock %}
+
+{% block content %}
+<h1 class="mt-4">Welcome to the Games Page</h1>
+<ul class="list-group" id="games">
+    <li class="list-group-item bg-dark"><a class="Game1" href="{{ url_for('password_strength_checker') }}"><img width="200px" src="{{url_for('static', filename='images/ps.png')}}"> Password Strength Checker</a></li>
+    <li class="list-group-item bg-dark"><a class="Game2" href="{{ url_for('cyber_security_quiz') }}"><img width="200px" src="{{url_for('static', filename='images/quiz.png')}}"> Cyber Security Quiz</a></li>
+    <li class="list-group-item bg-dark"><a class="Game3" href="{{ url_for('security_threat_match') }}"><img width="200px" src="{{url_for('static', filename='images/stm.png')}}"> Security Threat Match</a></li>
+</ul>
+{% endblock %}

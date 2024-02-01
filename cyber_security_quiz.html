@@ -1,0 +1,23 @@
+<!-- cyber_security_quiz.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-light shadow bg-primary p-4 fw-bold" style="--bs-bg-opacity: .5;">
+    <h2>Cybersecurity Quiz</h2>
+    <div class="container"> 
+        <p style="font-weight:bold;">{{ quizInstructions |  replace('\n', '<br>')  | safe }}</p>
+        <hr>
+        <h4 class="text-center" id="question-number"></h4>
+    </div>
+    <div id="quiz-container" class"container">
+        <!-- Quiz questions will be dynamically added here-->
+    </div>
+
+    <button class="btn btn-primary mt-3" onclick="submitQuiz()">Submit Answer</button>
+
+    <div id="result-container" class="mt-3"></div>
+</div>
+
+<script src="{{url_for('static', filename='quiz.js')}}"></script>
+{% endblock %}

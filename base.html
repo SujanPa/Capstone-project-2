@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
+    <title>{% block title %}Cybersecurity Awareness{% endblock %}</title>
+    <style>
+        .active {
+            border-bottom: 2px solid white;
+        }
+        .selected {
+            background-color: lightgrey;
+        }
+        navbar-nav {
+            color: white;
+
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #f8f9fa !important;
+            padding-right: 10px;
+        }
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #dc3545;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            border-bottom: 2px solid white;
+            
+        }
+        .footer {
+            background-color: #333;
+            color: #f8f9fa;
+        }
+        .user-info {
+            text-align: right;
+        }
+        [class^="Game"] {
+            font-weight: bold;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* This ensures that the content takes at least the full height of the viewport */
+        }
+        
+        .content {
+            flex: 1;
+        }
+        
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-{{ messages[0].split(' ')[0] }}">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+
+    {% include 'footer.html' %}
+
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="{{url_for('static', filename='custom.js')}}"></script>
+</body>
+</html>

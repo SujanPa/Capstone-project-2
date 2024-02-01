@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="mt-4">
+    <h1>Contact Us</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> info@cybersecurityawareness.com</p>
+            <p><strong>Address:</strong> 123 Cyber Street, Secure City</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        </div>
+
+        <div class="col-md-6">
+            <h2>Get in Touch</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your email" autocomplete="on">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message" autocomplete="on"></textarea>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function submitForm() {
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        var subject = "Important Message From Client";
+        var body = "Message: "+ message;
+
+        var mailtoLink = "mailto:info@cybersecurityawareness.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailtoLink;
+    }
+</script>
+{% endblock %}
