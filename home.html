@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='images/cyber1.png')}}" alt="cyber 1" class="d-block w-100">
+      </div>
+      <div class="carousel-item active">
+        <img src="{{url_for('static', filename='images/cyber3.png')}}" alt="Cyber 2" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='images/cyber2.jpg')}}" alt="Cyber 3" class="d-block w-100">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="text-center">
+    <h1>Welcome to Our Website!</h1>
+    <h2>Cybersecurity Awareness</h2>
+    <p>At Cybersecurity Awareness, we prioritize your online safety and security. In today's digital age, it's crucial to stay vigilant and informed about cybersecurity threats. Here are some key tips to enhance your cybersecurity awareness:</p>
+    <h3>Use Strong Passwords</h3>
+    <p class="text-center">Choose complex passwords and update them regularly. A strong password includes a mix of uppercase and lowercase letters, numbers, and symbols.</p>
+    <img src="{{url_for('static', filename='images/password_strength.jpg')}}" alt="Password Strength Image" class="img-fluid" style="max-width: 100%; margin-bottom: 20px;">  
+    <h3>Keep Software Updated</h3>
+    <p>Regularly update your operating system, antivirus software, and other applications. Software updates often include security patches that protect against known vulnerabilities.</p>
+    <img src="{{url_for('static', filename='images/latest_update.jpg')}}" alt="Software Update Image" class="img-fluid" style="max-width: 100%; margin-bottom: 20px;">  
+    <h3>Be Cautious of Phishing</h3>
+    <p>Avoid clicking on suspicious links or providing personal information in response to unexpected emails. Phishing attempts often disguise themselves as trustworthy sources.</p>
+    <img src="{{url_for('static', filename='images/phishing.jpg')}}" alt="Phishing Example Image" class="img-fluid" style="max-width: 100%; margin-bottom: 20px;">  
+</div>
+{% endblock %}
